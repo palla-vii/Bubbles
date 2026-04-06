@@ -82,12 +82,18 @@ Open the frontend URL in **two browser tabs** and send messages between them!
 
 Following the structured approach from the documentation:
 
-1. **Phase 1**: Project Setup & Express Server ✅ (In progress)
-2. **Phase 2**: MongoDB & Mongoose Models
+1. **Phase 1**: Project Setup & Express Server ✅ (COMPLETED)
+2. **Phase 2**: MongoDB & Mongoose Models (Next)
 3. **Phase 3**: JWT Authentication (Login/Register)
 4. **Phase 4**: REST API Routes (Rooms, Messages)
 5. **Phase 5**: Socket.io Real-Time Layer
 6. **Phase 6**: React Frontend
+
+## 📖 Learning Resources
+
+New to this project? Check these out:
+- **[LEARNING_GUIDE.md](./LEARNING_GUIDE.md)** - Comprehensive explanation of what we built + 15 interview Q&A
+- **[GLOSSARY.md](./GLOSSARY.md)** - All technical terms explained simply with examples
 
 ## 🛠 Tech Stack
 

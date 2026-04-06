@@ -1,0 +1,152 @@
+/* App.css - Global styles for the chat application */
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.welcome-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-card h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.welcome-card > p {
+  color: #666;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.phase-info {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 4px solid #667eea;
+}
+
+.phase-info h2 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.phase-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.phase-info li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.phase-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.phase-badge.done {
+  background: #10b981;
+  color: white;
+}
+
+.phase-badge.next {
+  background: #f59e0b;
+  color: white;
+}
+
+.phase-badge {
+  background: #e5e7eb;
+  color: #666;
+}
+
+.server-status {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.server-status h3 {
+  color: #1e40af;
+  margin-bottom: 12px;
+}
+
+.server-status ol {
+  margin-left: 20px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.server-status li {
+  margin-bottom: 10px;
+}
+
+.server-status ul {
+  margin-left: 30px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.server-status ul li {
+  list-style: disc;
+  margin-bottom: 5px;
+}
+
+code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #d946ef;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}

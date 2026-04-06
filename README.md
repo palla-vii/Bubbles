@@ -2,18 +2,18 @@
 
 A full-stack real-time chat application built with **MERN** (MongoDB, Express, React, Node.js) + **Socket.io**.
 
-## 📋 Features
+## Features
 
-- ✅ User registration & login with **bcrypt** password hashing
-- ✅ **JWT** token-based authentication (stateless, scalable)
-- ✅ Create and join private chat rooms
-- ✅ Real-time messaging via **Socket.io** WebSocket
-- ✅ Persistent message history (MongoDB)
-- ✅ Typing indicators (live feedback when users type)
-- ✅ User presence (active user count per room)
-- ✅ Protected routes (unauthenticated users redirected)
+- User registration & login with **bcrypt** password hashing
+- **JWT** token-based authentication (stateless, scalable)
+- Create and join private chat rooms
+- Real-time messaging via **Socket.io** WebSocket
+- Persistent message history (MongoDB)
+- Typing indicators (live feedback when users type)
+- User presence (active user count per room)
+- Protected routes (unauthenticated users redirected)
 
-## 🏗 Project Structure
+## Project Structure
 
 ```
 mern-chat-app/
@@ -38,7 +38,7 @@ mern-chat-app/
     └── vite.config.js
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js** 18+ ([download](https://nodejs.org/))
@@ -89,7 +89,7 @@ Following the structured approach from the documentation:
 5. **Phase 5**: Socket.io Real-Time Layer
 6. **Phase 6**: React Frontend
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Node.js 20 LTS** - JavaScript runtime
@@ -109,7 +109,7 @@ Following the structured approach from the documentation:
 - **Axios 1.x** - HTTP client
 - **React Context API** - Global state management
 
-## 📖 How It Works
+## How It Works
 
 ### Authentication Flow
 1. User registers with email + password
@@ -124,7 +124,7 @@ Following the structured approach from the documentation:
 3. Server broadcasts message to all sockets in that room
 4. Clients receive message in real-time and append to chat
 
-## 📝 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Create user account
@@ -137,7 +137,7 @@ Following the structured approach from the documentation:
 ### Messages
 - `GET /api/messages/:roomId` - Get message history with pagination
 
-## 🔌 Socket Events
+## Socket Events
 
 ### Client → Server
 - `join-room` - User joins a room
@@ -151,7 +151,7 @@ Following the structured approach from the documentation:
 - `user-typing` - User is typing
 - `user-left` - User disconnected
 
-## 📅 Learning Outcomes
+## Learning Outcomes
 
 By building this project, you'll master:
 - ✅ Real-time communication with WebSockets

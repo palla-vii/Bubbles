@@ -15,15 +15,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware: Enable CORS for frontend requests
-// In production, specify your actual frontend domain instead of "*"
-app.use(cors({
-  origin: "http://localhost:5173",
+const corsOptions = {
+  origin: process.env.CLIENT_URL || "http://localhost:5173",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
-}));
+};
 
-app.options("*", cors());
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 // Middleware: Parse incoming JSON requests
 app.use(express.json());

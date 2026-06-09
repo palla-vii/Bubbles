@@ -1,8 +1,11 @@
+import { addMessage } from "./models/Message.js";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
+import mongoose from "mongoose";
+import authRoutes from "./routes/auth.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -11,18 +14,22 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Middleware: Enable CORS for frontend requests
+// In production, specify your actual frontend domain instead of "*"
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+app.options("*", cors());
+
 // Middleware: Parse incoming JSON requests
 app.use(express.json());
 
-// Middleware: Enable CORS for frontend requests
-// In production, specify your actual frontend domain instead of "*"
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // Allow cookies if using cookie-based auth
-  })
-);
+// Routes
+app.use("/api/auth", authRoutes);
 
 // Create HTTP server (required for Socket.io)
 const server = http.createServer(app);
@@ -34,7 +41,11 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
+//mongodb connection
+// Temporary in-memory store until MongoDB connection is resolved
+export const messages = [];
+export const users = [];
+console.log("Using in-memory store for development");
 /**
  * ========== ROUTES ==========
  * These are placeholder routes for now.
@@ -45,7 +56,7 @@ const io = new Server(server, {
  * Health check endpoint - use this to verify the server is running
  */
 app.get("/api/health", (req, res) => {
-  res.json({ message: "✅ Server is running!", timestamp: new Date() });
+  res.json({ message: " Server is running!", timestamp: new Date() });
 });
 
 /**
@@ -54,11 +65,28 @@ app.get("/api/health", (req, res) => {
  * For now, we just log when a client connects.
  */
 io.on("connection", (socket) => {
-  console.log(`🔗 User connected: ${socket.id}`);
+  console.log(` User connected: ${socket.id}`);
 
-  // Log when user disconnects
+  socket.on("joinRoom", ({ room, username }) => {
+    socket.join(room);
+    socket.to(room).emit("userJoined", { username, message: `${username} joined the room` });
+    console.log(`${username} joined room: ${room}`);
+  });
+
+  socket.on("sendMessage", ({ room, message, username }) => {
+    const newMessage = {
+      id: Date.now().toString(),
+      room,
+      content: message,
+      sender: username,
+      timestamp: new Date()
+    };
+    addMessage(newMessage);
+    io.to(room).emit("receiveMessage", newMessage);
+  });
+
   socket.on("disconnect", () => {
-    console.log(`❌ User disconnected: ${socket.id}`);
+    console.log(` User disconnected: ${socket.id}`);
   });
 });
 
@@ -69,7 +97,7 @@ io.on("connection", (socket) => {
 server.listen(PORT, () => {
   console.log(`
 ╔═══════════════════════════════════════════════════════════╗
-║     🚀 MERN Chat Server Started Successfully!             ║
+║        MERN Chat Server Started Successfully!             ║
 ╠═══════════════════════════════════════════════════════════╣
 ║                                                           ║
 ║   📍 Server URL:  http://localhost:${PORT}                ║
@@ -87,14 +115,14 @@ server.listen(PORT, () => {
 
 // Handle server errors
 server.on("error", (err) => {
-  console.error("❌ Server error:", err);
+  console.error(" Server error:", err);
 });
 
 // Graceful shutdown
 process.on("SIGINT", () => {
-  console.log("\n⏹️  Shutting down server...");
+  console.log("\n Shutting down server...");
   server.close(() => {
-    console.log("✅ Server closed");
+    console.log(" Server closed");
     process.exit(0);
   });
 });

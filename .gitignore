@@ -34,4 +34,10 @@ yarn-error.log*
 Thumbs.db
 .DS_Store
 
+
+
+# Learning materials (not for git)
+GLOSSARY.md
+INTERVIEW_PREP.md
+LEARNING_GUIDE.md
 MERN_Chat_App_documentation.docx

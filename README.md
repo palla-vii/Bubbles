@@ -4,14 +4,14 @@ A full-stack real-time chat application built with **MERN** (MongoDB, Express, R
 
 ## Features
 
-- ✅ User registration & login with **bcrypt** password hashing
-- ✅ **JWT** token-based authentication (stateless, scalable)
-- ✅ Create and join private chat rooms
-- ✅ Real-time messaging via **Socket.io** WebSocket
-- ✅ Persistent message history (MongoDB)
-- ✅ Typing indicators (live feedback when users type)
-- ✅ User presence (active user count per room)
-- ✅ Protected routes (unauthenticated users redirected)
+- User registration & login with **bcrypt** password hashing
+- **JWT** token-based authentication (stateless, scalable)
+- Create and join private chat rooms
+- Real-time messaging via **Socket.io** WebSocket
+- Persistent message history (MongoDB)
+- Typing indicators (live feedback when users type)
+- User presence (active user count per room)
+- Protected routes (unauthenticated users redirected)
 
 ## Project Structure
 
@@ -38,7 +38,7 @@ mern-chat-app/
     └── vite.config.js
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js** 18+ ([download](https://nodejs.org/))
@@ -47,7 +47,7 @@ mern-chat-app/
 
 ### Setup Instructions
 
-#### 1️⃣ Backend Setup
+#### Backend Setup
 ```bash
 cd mern-chat-app/server
 npm install
@@ -67,7 +67,7 @@ npm run dev
 ```
 Server runs on `http://localhost:5000`
 
-#### 2️⃣ Frontend Setup
+#### Frontend Setup
 ```bash
 cd mern-chat-app/client
 npm install
@@ -75,10 +75,10 @@ npm run dev
 ```
 Client runs on `http://localhost:5173`
 
-#### 3️⃣ Test Real-Time Messaging
+#### Test Real-Time Messaging
 Open the frontend URL in **two browser tabs** and send messages between them!
 
-## 📚 Build Phases
+## Build Phases
 
 Following the structured approach from the documentation:
 
@@ -89,13 +89,7 @@ Following the structured approach from the documentation:
 5. **Phase 5**: Socket.io Real-Time Layer
 6. **Phase 6**: React Frontend
 
-## 📖 Learning Resources
-
-New to this project? Check these out:
-- **[LEARNING_GUIDE.md](./LEARNING_GUIDE.md)** - Comprehensive explanation of what we built + 15 interview Q&A
-- **[GLOSSARY.md](./GLOSSARY.md)** - All technical terms explained simply with examples
-
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Node.js 20 LTS** - JavaScript runtime
@@ -115,7 +109,7 @@ New to this project? Check these out:
 - **Axios 1.x** - HTTP client
 - **React Context API** - Global state management
 
-## 📖 How It Works
+## How It Works
 
 ### Authentication Flow
 1. User registers with email + password
@@ -130,7 +124,7 @@ New to this project? Check these out:
 3. Server broadcasts message to all sockets in that room
 4. Clients receive message in real-time and append to chat
 
-## 📝 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Create user account
@@ -143,7 +137,7 @@ New to this project? Check these out:
 ### Messages
 - `GET /api/messages/:roomId` - Get message history with pagination
 
-## 🔌 Socket Events
+## Socket Events
 
 ### Client → Server
 - `join-room` - User joins a room
@@ -157,7 +151,7 @@ New to this project? Check these out:
 - `user-typing` - User is typing
 - `user-left` - User disconnected
 
-## 📅 Learning Outcomes
+## Learning Outcomes
 
 By building this project, you'll master:
 - ✅ Real-time communication with WebSockets
@@ -177,6 +171,6 @@ This is an internship portfolio project. Feel free to fork and extend with featu
 - Read receipts
 - Voice/video calling
 
-## 📄 License
+## License
 
 MIT License - Feel free to use this for your portfolio!

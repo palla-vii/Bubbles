@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://bubbles-fx11.onrender.com");
 
 export default function Chat() {
   const [messages, setMessages] = useState([]);

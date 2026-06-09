@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       // Proxy API requests to the backend server
       "/api": {
-        target: "http://localhost:5000",
+        target: "https://bubbles-fx11.onrender.com",
         changeOrigin: true,
         secure: false,
       },

@@ -1,8 +1,8 @@
-# 💬 MERN Real-Time Chat Application
+# BUBBLES - Real-Time Chat Application using MERN
 
 A full-stack real-time chat application built with **MERN** (MongoDB, Express, React, Node.js) + **Socket.io**.
 
-## 📋 Features
+## Features
 
 - ✅ User registration & login with **bcrypt** password hashing
 - ✅ **JWT** token-based authentication (stateless, scalable)
@@ -13,7 +13,7 @@ A full-stack real-time chat application built with **MERN** (MongoDB, Express, R
 - ✅ User presence (active user count per room)
 - ✅ Protected routes (unauthenticated users redirected)
 
-## 🏗 Project Structure
+## Project Structure
 
 ```
 mern-chat-app/

@@ -151,15 +151,6 @@ Following the structured approach from the documentation:
 - `user-typing` - User is typing
 - `user-left` - User disconnected
 
-## Learning Outcomes
-
-By building this project, you'll master:
-- ✅ Real-time communication with WebSockets
-- ✅ Secure authentication using JWT & bcrypt
-- ✅ NoSQL database design (MongoDB + Mongoose)
-- ✅ RESTful API design with Express
-- ✅ React state management (Context API + useReducer)
-- ✅ Building production-grade applications
 
 ## 🤝 Contributing
 

@@ -82,7 +82,7 @@ Open the frontend URL in **two browser tabs** and send messages between them!
 
 Following the structured approach from the documentation:
 
-1. **Phase 1**: Project Setup & Express Server ✅ (COMPLETED)
+1. **Phase 1**: Project Setup & Express Server 
 2. **Phase 2**: MongoDB & Mongoose Models (Next)
 3. **Phase 3**: JWT Authentication (Login/Register)
 4. **Phase 4**: REST API Routes (Rooms, Messages)

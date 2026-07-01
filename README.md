@@ -2,6 +2,13 @@
 
 A full-stack real-time chat application built with **MERN** (MongoDB, Express, React, Node.js) + **Socket.io**.
 
+## 🚀 Live Demo
+
+- **Frontend (Vercel):** [https://bubbles-client.vercel.app](https://bubbles-client.vercel.app)
+- **Backend API (Render):** [https://bubbles-fx11.onrender.com](https://bubbles-fx11.onrender.com)
+
+> Note: The backend is hosted on Render's free tier, so it may take 30–60 seconds to spin up on first request after a period of inactivity.
+
 ## Features
 
 - User registration & login with **bcrypt** password hashing
@@ -108,6 +115,10 @@ Following the structured approach from the documentation:
 - **Socket.io-client 4.x** - WebSocket client
 - **Axios 1.x** - HTTP client
 - **React Context API** - Global state management
+
+### Deployment
+- **Vercel** - Frontend hosting
+- **Render** - Backend hosting
 
 ## How It Works
 
